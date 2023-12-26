@@ -37,8 +37,7 @@ def show_back():
 
 def countdown(count):
     main_canvas.itemconfig(timer, text=f"{count}")
-    counting = count > 0
-    if counting:
+    if counting := count > 0:
         timer_seq = window.after(1000, countdown, count - 1)
     else:
         show_back()
